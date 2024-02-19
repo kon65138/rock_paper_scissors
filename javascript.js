@@ -11,3 +11,17 @@ function getComputerChoice () {
 
 let playerSelection = prompt("rock, paper or scissors?", "").toLowerCase();
 let computerSelection = getComputerChoice();
+
+function playRound (playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        return "tie!";
+    } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
+        return "You win!";
+    } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
+        return "You win!";
+    } else if ((playerSelection === "scissors") && (computerSelection === "paper")) {
+        return "You win!"
+    } else {
+        return "You lose!"
+    }
+}
