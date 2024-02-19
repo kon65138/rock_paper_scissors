@@ -9,12 +9,14 @@ function getComputerChoice () {
     }
 }
 
-let playerSelection = prompt("rock, paper or scissors?", "").toLowerCase();
+let playerSelection;
 let computerSelection = getComputerChoice();
+let hscore = 0;
+let cscore = 0;
 
 function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "tie!";
+        return "Tie!";
     } else if ((playerSelection === "rock") && (computerSelection === "scissors")) {
         return "You win!";
     } else if ((playerSelection === "paper") && (computerSelection === "rock")) {
@@ -25,3 +27,26 @@ function playRound (playerSelection, computerSelection) {
         return "You lose!"
     }
 }
+
+function playGame () {
+    playerSelection = prompt("rock, paper or scissors?", "").toLowerCase(); 
+    computerSelection = getComputerChoice();
+    const result = playRound(playerSelection, computerSelection);
+    if (result === "You win!") {
+        hscore = ++hscore;
+        console.log(`You win! The score is ${hscore}-${cscore}`);
+    } else if (result === "You lose!") {
+        cscore = ++cscore;
+        console.log(`Your lose! The score is ${hscore}-${cscore}`);
+    } else {
+        console.log(`Tie! The score is ${hscore}-${cscore}`);
+    }
+
+
+}
+
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
