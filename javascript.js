@@ -28,18 +28,33 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-function playGame () {
-    playerSelection = prompt("rock, paper or scissors?", "").toLowerCase(); 
+function playGame () { 
     computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
     if (result === "You win!") {
         hscore = ++hscore;
-        console.log(`You win! The score is ${hscore}-${cscore}`);
+        console.log(`You win! You chose ${playerSelection} and your opponent chose ${computerSelection}! The score is ${hscore}-${cscore}`);
     } else if (result === "You lose!") {
         cscore = ++cscore;
-        console.log(`Your lose! The score is ${hscore}-${cscore}`);
+        console.log(`Your lose! You chose ${playerSelection} and your opponent chose ${computerSelection}! The score is ${hscore}-${cscore}`);
     } else {
-        console.log(`Tie! The score is ${hscore}-${cscore}`);
+        console.log(`Tie! You chose ${playerSelection} and your opponent chose ${computerSelection}! The score is ${hscore}-${cscore}`);
     }
+}
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
+rock.addEventListener('click', () => {
+    playerSelection = 'rock';
+    playGame();
+})
+paper.addEventListener('click', () => {
+    playerSelection = 'paper';
+    playGame();
+})
+scissors.addEventListener('click', () => {
+    playerSelection = 'scissors';
+    playGame();
+})
