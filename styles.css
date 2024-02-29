@@ -1,20 +1,93 @@
 * {
     box-sizing: border-box;
   }
-.body {
+  html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+
     display: flex;
     justify-content: center;
-    
+    align-items: center;
+    background-color: rgb(5, 5, 73)
+}
+
+.gamecanvas {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    background-color: rgb(23, 223, 66);
+    border-radius: 10px;
+    border: black 4px solid;
+    max-width: 75%;
+    padding: 2%;
 }
 
 .btncontainer {
+    padding: 50px 20px;
+    gap: 20px;
     display: flex;
     flex: auto;
     min-width: 400px;
     min-height: 300px;
+    border: 2px black solid;
 }
-
 
 .btncontainer button {
-    flex: 1;
+    flex: auto;
+    border-radius: 20px;
 }
+
+.resultscontainer {
+    display: flex;
+    flex: auto;
+    min-width: 400px;
+    min-height: 300px;
+    border: 2px black solid;
+}
+
+.wlt, .scorecontainer {
+    flex: 1;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.result, .chosen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+    border: 2px black solid;
+    text-align: center;
+    margin: auto 0px;
+    gap: 10px;
+}
+
+.result div {
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+.chosen div {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px black solid;
+    margin: 10%;
+    flex: auto;
+}
+
+.score div {
+    font-size: 50px;
+}
+
