@@ -43,10 +43,3 @@ function playGame () {
     }
 
 
-}
-
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
