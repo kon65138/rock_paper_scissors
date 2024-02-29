@@ -33,18 +33,31 @@ function playGame () {
     const result = playRound(playerSelection, computerSelection);
     if (result === "You win!") {
         hscore = ++hscore;
-        console.log(`You win! You chose ${playerSelection} and your opponent chose ${computerSelection}! The score is ${hscore}-${cscore}`);
+        wlt.textContent = `YOU WON!`;
+        yourChoice.textContent = `You chose: ${playerSelection}!`;
+        cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
+        score.textContent = `score: ${hscore}-${cscore}`;
     } else if (result === "You lose!") {
         cscore = ++cscore;
-        console.log(`Your lose! You chose ${playerSelection} and your opponent chose ${computerSelection}! The score is ${hscore}-${cscore}`);
+        wlt.textContent = `YOU LOST!`;
+        yourChoice.textContent = `You chose: ${playerSelection}!`;
+        cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
+        score.textContent = `score: ${hscore}-${cscore}`;
     } else {
-        console.log(`Tie! You chose ${playerSelection} and your opponent chose ${computerSelection}! The score is ${hscore}-${cscore}`);
+        wlt.textContent = `TIE!`;
+        yourChoice.textContent = `You chose: ${playerSelection}!`;
+        cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
+        score.textContent = `score: ${hscore}-${cscore}`;
     }
 }
 
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+let wlt = document.querySelector('.result div');
+let yourChoice = document.querySelector('#player');
+let cpuChoice = document.querySelector('#cpu');
+let score = document.querySelector('.score div');
 
 rock.addEventListener('click', () => {
     playerSelection = 'rock';
