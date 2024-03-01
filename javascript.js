@@ -28,28 +28,47 @@ function playRound (playerSelection, computerSelection) {
     }
 }
 
-function playGame () { 
+function playGame () {
     computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
     if (result === "You win!") {
         hscore = ++hscore;
-        wlt.textContent = `YOU WON!`;
-        yourChoice.textContent = `You chose: ${playerSelection}!`;
-        cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
-        score.textContent = `score: ${hscore}-${cscore}`;
+        if (hscore === 5) {
+            wlt.textContent = `MATCH WON! (score will reset)`;
+            yourChoice.textContent = `You chose: ${playerSelection}!`;
+            cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
+            score.textContent = `score: ${hscore}-${cscore}`;
+            hscore = 0;
+            cscore = 0;
+        } else {
+            wlt.textContent = `You won the round!`;
+            yourChoice.textContent = `You chose: ${playerSelection}!`;
+            cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
+            score.textContent = `score: ${hscore}-${cscore}`;
+        }
     } else if (result === "You lose!") {
         cscore = ++cscore;
-        wlt.textContent = `YOU LOST!`;
-        yourChoice.textContent = `You chose: ${playerSelection}!`;
-        cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
-        score.textContent = `score: ${hscore}-${cscore}`;
+        if (cscore === 5) {
+            wlt.textContent = `MATCH LOST! (score will reset)`;
+            yourChoice.textContent = `You chose: ${playerSelection}!`;
+            cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
+            score.textContent = `score: ${hscore}-${cscore}`;
+            hscore = 0;
+            cscore = 0;
+        } else {
+            wlt.textContent = `You lost the round!`;
+            yourChoice.textContent = `You chose: ${playerSelection}!`;
+            cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
+            score.textContent = `score: ${hscore}-${cscore}`;
+        }
     } else {
-        wlt.textContent = `TIE!`;
+        wlt.textContent = `Round tie!`;
         yourChoice.textContent = `You chose: ${playerSelection}!`;
         cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
         score.textContent = `score: ${hscore}-${cscore}`;
     }
 }
+
 
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
