@@ -34,7 +34,7 @@ function playGame () {
     if (result === "You win!") {
         hscore = ++hscore;
         if (hscore === 5) {
-            wlt.textContent = `MATCH WON! (score will reset)`;
+            wlt.textContent = `MATCH WON!`;
             yourChoice.textContent = `You chose: ${playerSelection}!`;
             cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
             score.textContent = `score: ${hscore}-${cscore}`;
@@ -49,7 +49,7 @@ function playGame () {
     } else if (result === "You lose!") {
         cscore = ++cscore;
         if (cscore === 5) {
-            wlt.textContent = `MATCH LOST! (score will reset)`;
+            wlt.textContent = `MATCH LOST!`;
             yourChoice.textContent = `You chose: ${playerSelection}!`;
             cpuChoice.textContent = `cpu chose: ${computerSelection}!`;
             score.textContent = `score: ${hscore}-${cscore}`;

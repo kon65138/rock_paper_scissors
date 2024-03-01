@@ -23,6 +23,15 @@ body {
     border: black 4px solid;
     max-width: 75%;
     padding: 2%;
+    min-width: 450px;
+    min-height: 450px;
+}
+
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: green;
+    margin: 0
 }
 
 .btncontainer {
@@ -31,8 +40,8 @@ body {
     display: flex;
     flex: auto;
     min-width: 400px;
-    min-height: 300px;
-    border: 2px black solid;
+    min-height: 200px;
+    background: green;
 }
 
 .btncontainer button {
@@ -45,12 +54,12 @@ body {
     flex: auto;
     min-width: 400px;
     min-height: 300px;
-    border: 2px black solid;
+    background: green;
 }
 
 .wlt, .scorecontainer {
     flex: 1;
-    border: 2px black solid;
+
     display: flex;
     flex-direction: column;
 }
@@ -61,7 +70,6 @@ body {
     justify-content: center;
     align-items: center;
     flex: auto;
-    border: 2px black solid;
     text-align: center;
     margin: auto 0px;
     gap: 10px;
@@ -82,7 +90,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px black solid;
     margin: 10%;
     flex: auto;
 }
